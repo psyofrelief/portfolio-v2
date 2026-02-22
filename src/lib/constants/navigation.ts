@@ -13,40 +13,24 @@ export const FOOTER_LINKS: FooterCategory[] = [
     category: "Sitemap",
     links: [
       { label: "Home", href: "/" },
-      { label: "About", href: "/" },
-      { label: "Memberships", href: "/" },
+      { label: "About", href: "/about" },
+      { label: "Works", href: "/works" },
+      { label: "Grid", href: "/grid" },
       { label: "Contact", href: "/contact" },
     ],
   },
   {
     category: "Follow",
     links: [
-      { label: "Instagram", href: "https://instagram.com" },
-      { label: "Facebook", href: "https://facebook.com" },
-      { label: "Tiktok", href: "https://tiktok.com" },
+      { label: "GitHub", href: "https://github.com/psyofrelief" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/faried-idris" },
     ],
   },
   {
-    category: "Location",
+    category: "Legal",
     links: [
-      {
-        label: "221B Baker Street,",
-        href: "https://maps.google.com",
-        trueLink: false,
-      },
-      {
-        label: "Innaloo, WA 6018,",
-        href: "https://maps.google.com",
-        trueLink: false,
-      },
-      { label: "Australia", href: "https://maps.google.com", trueLink: false },
-    ],
-  },
-  {
-    category: "Contact Info",
-    links: [
-      { label: "hello@thepeak.com", href: "mailto:hello@thepeak.com" },
-      { label: "+61 444 444 444", href: "tel:+61444444444" },
+      { label: "Terms Of Use", href: "/terms-of-use" },
+      { label: "Privacy Policy", href: "privacy-policy" },
     ],
   },
 ] as const;

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 
 const neueHaasGrotesk = localFont({
   src: [
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body className={`${neueHaasGrotesk.variable} antialiased`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
