@@ -2,49 +2,26 @@
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-@layer theme {
-  :root {
-    --background: 0 0% 99%;
-    --foreground: 0 0% 3%;
-    --foreground-muted: 0 0% 39%;
+:root {
+  --background: 0 0% 99%;
+  --foreground: 0 0% 3%;
+  --foreground-secondary: 0 0% 50%;
 
-    --popover: 0 0% 95%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 10%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: var(--color-foreground);
-    --foreground-muted: 0 0% 30%;
-
-    --destructive: 0 90% 60%;
-    --success: 125 90% 65%;
-  }
-
-  .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 97%;
-    --foreground-muted: 0 0% 61%;
-
-    --popover: 0 0% 5%;
-
-    --foreground-muted: 0 0% 70%;
-
-    --destructive: 0 60% 50%;
-    --success: 125 60% 45%;
-  }
+  --outline: 0 0% 85%;
+  --destructive: 0 90% 60%;
+  --success: 125 90% 65%;
 }
 
 @theme inline {
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
-  --color-foreground-muted: hsl(var(--foreground-muted));
+  --color-foreground-secondary: hsl(var(--foreground-secondary));
 
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
 
   --color-outline: hsl(var(--outline));
   --color-destructive: hsl(var(--destructive));
@@ -57,18 +34,29 @@
   --text-xl: 2rem; /* 32px */
   --text-2xl: 2.5rem; /* 40px */
 
+  --spacing-2xs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+  --spacing-3xl: 100px;
+
   --radius: 4px;
 
   --font-sans: "neueHaasGrotesk";
 }
 
-/* Global element styling */
-body {
-  font-family: var(--font-sans), sans-serif;
-  font-size: var(--text-sm);
-  color: var(--color-foreground);
-}
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans), sans-serif;
+    font-size: var(--text-sm);
+  }
 
-li {
-  list-style: none;
+  li {
+    list-style: none;
+  }
 }
