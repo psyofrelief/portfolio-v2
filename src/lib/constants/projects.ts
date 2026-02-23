@@ -3,12 +3,13 @@ export interface ProjectItemData {
   idx: number;
   name: string;
   shortDesc: string;
+  longDesc: string;
   links: {
     source: string | null;
     website: string;
   };
   content: {
-    paragraphs: string[];
+    paragraph: string;
     techStack: string[];
   };
   image: {
@@ -27,15 +28,15 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
     idx: 1,
     name: "ExifPanel",
     shortDesc: "EXIF Metadata Inspection Tool",
+    longDesc:
+      "A technical utility built to bridge the gap between raw binary image data and actionable insights. It leverages a high-performance parsing engine to extract nested EXIF and GPS data within a refined, developer-centric interface.",
     links: {
       source: "https://github.com/psyofrelief/exif-panel",
       website: "https://exifpanel.dev",
     },
     content: {
-      paragraphs: [
+      paragraph:
         "ExifPanel was designed to provide developers and content producers with a powerful yet user-friendly tool for rapidly retrieving and presenting image metadata. It focuses on effectively parsing complex EXIF, IPTC, and XMP data encoded within digital photographs, providing important fields like location, exposure settings, and camera model in a clear, understandable format.",
-        "The design and development process focused on accuracy, usability, and performance. To guarantee consistent behavior and seamless interactions, the frontend makes use of Next.js, TypeScript, and TailwindCSS. The backend uses a collection of API routes powered by libraries like sharp and exifr to process photos.",
-      ],
       techStack: ["Next.js", "TypeScript", "Node.js", "TailwindCSS"],
     },
     image: {
@@ -51,15 +52,15 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
     idx: 2,
     name: "Prekoda",
     shortDesc: "Creative Web & Branding Agency",
+    longDesc:
+      "A creative studio focused on high-end branding and robust full-stack engineering. The platform utilizes a hybrid stack of Laravel and Next.js to deliver fluid, high-conversion digital experiences with a heavy emphasis on motion design.",
     links: {
       source: null,
       website: "https://prekoda.com",
     },
     content: {
-      paragraphs: [
+      paragraph:
         "Prekoda is a creative web and branding studio I founded to help businesses build fast, functional, and memorable digital experiences. The focus spans full-stack web development, digital branding, and scalable product design.",
-        "I handle everything in-house, from initial strategy to deployment - ensuring each project meets both creative and technical goals. The studio runs on a modern stack including Laravel, Next.js, and Tailwind CSS.",
-      ],
       techStack: ["Next.js", "Laravel", "MySQL", "GSAP"],
     },
     image: {
@@ -76,15 +77,15 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
     idx: 3,
     name: "CapBlitz",
     shortDesc: "Typing Test",
+    longDesc:
+      "A precision typing application engineered for low-latency visual feedback. It uses a custom TypeScript state management system to track WPM and keystroke dynamics within an intentionally minimalist, distraction-free environment.",
     links: {
       source: "https://github.com/psyofrelief/capblitz",
       website: "https://capblitz.com",
     },
     content: {
-      paragraphs: [
+      paragraph:
         "CapBlitz is a responsive typing test built entirely with Next.js, Tailwind CSS, and TypeScript. Designed for public users, it delivers a clean and distraction-free interface that adapts seamlessly across devices.",
-        "The interface was developed from scratch, with particular attention to performance and mobile interaction. syncing user input with visual feedback was the most complex challenge.",
-      ],
       techStack: ["Next.js", "TypeScript", "TailwindCSS"],
     },
     image: {
@@ -101,15 +102,15 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
     idx: 4,
     name: "PathSnap",
     shortDesc: "Modern Link Shortener",
+    longDesc:
+      "An API-first URL management platform designed for maximum routing speed. It features a streamlined dashboard for managing dynamic QR codes and short links, backed by a robust Laravel and MySQL architecture.",
     links: {
       source: "https://github.com/psyofrelief/pathsnap",
       website: "p-s.co",
     },
     content: {
-      paragraphs: [
+      paragraph:
         "PathSnap is a custom-built link shortener designed for fast performance and ease of use. It allows users to create, manage, and share clean short URLs and QR codes through a modern interface.",
-        "Built the frontend using Next.js, TypeScript, and TailwindCSS. On the backend, Laravel and MySQL handle routing, authentication, and link management via an API-first approach.",
-      ],
       techStack: ["Next.js", "Laravel", "TypeScript", "MySQL"],
     },
     image: {
@@ -126,15 +127,15 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
     idx: 5,
     name: "AYWA",
     shortDesc: "Culture-Inspired Streetwear",
+    longDesc:
+      "A headless e-commerce platform where culture meets modern web technology. By decoupling the frontend via Shopify’s Storefront API, the site achieves superior load speeds and supports bespoke user authentication logic.",
     links: {
       source: null,
       website: "https://www.aywa2dawrld.com",
     },
     content: {
-      paragraphs: [
+      paragraph:
         "AYWA is a culture-driven streetwear brand that needed a scalable ecommerce platform with a clear visual identity. The goal was to build a fast, reliable shopping experience that reflects the brand’s ambition.",
-        "Developed a custom frontend using Next.js and Shopify’s Storefront API. Built backend services with Laravel to manage user data, subscriptions, and authentication.",
-      ],
       techStack: ["Next.js", "Laravel", "TypeScript", "MySQL", "Shopify API"],
     },
     image: {

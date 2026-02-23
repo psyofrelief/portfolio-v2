@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import NavLink from "./NavLink";
 import { NAV_LINKS } from "@/lib/constants/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -11,7 +12,9 @@ export default function Navbar() {
       className="px-md py-sm text-foreground fixed top-0 right-0 left-0 flex w-full justify-between mix-blend-difference"
       data-theme="dark"
     >
-      <p className="text-xs">FARIED IDRIS</p>
+      <Link href={"/"}>
+        <p className="text-xs">FARIED IDRIS</p>
+      </Link>
       {isHome && (
         <div className="flex flex-col text-xs leading-tight">
           <p className="max-w-65">Full Stack Engineer / Graphic Designer</p>
