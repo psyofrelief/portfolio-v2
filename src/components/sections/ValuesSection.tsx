@@ -8,7 +8,6 @@ export default function ValuesSection() {
   return (
     <Section
       data-theme="dark"
-      first
       className="gap-y-2xl border-t-outline text-foreground flex min-h-200 flex-col justify-between border-t"
     >
       <header className="gap-y-sm flex flex-col">

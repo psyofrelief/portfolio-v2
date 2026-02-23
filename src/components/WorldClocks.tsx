@@ -8,7 +8,7 @@ const CLOCKS = [
 
 export function WorldClocks() {
   return (
-    <div className="gap-xl flex w-full flex-col justify-between">
+    <div className="gap-xl flex w-full justify-between">
       {CLOCKS.map((clock) => (
         <div key={clock.label} className="flex flex-col items-center">
           <AnalogueClock timezone={clock.zone} />
