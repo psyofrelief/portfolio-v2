@@ -9,7 +9,7 @@ export default function Navbar() {
   const isHome = pathname === "/";
   return (
     <nav
-      className="px-md py-sm text-foreground fixed top-0 right-0 left-0 flex w-full justify-between mix-blend-difference"
+      className="px-md py-sm text-foreground fixed top-0 right-0 left-0 z-4 flex w-full justify-between mix-blend-difference"
       data-theme="dark"
     >
       <Link href={"/"}>
