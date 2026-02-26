@@ -5,7 +5,6 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
   variant?: "primary" | "outline";
 }
-
 export default function Button({
   children,
   isLoading = false,
@@ -22,7 +21,7 @@ export default function Button({
   return (
     <button
       className={cn(
-        "gap-x-xs px-sm py-xs flex size-fit cursor-pointer items-center justify-center rounded text-xs whitespace-nowrap transition-all",
+        "flex size-fit cursor-pointer items-center justify-center gap-x-2 rounded px-4 py-2 text-xs whitespace-nowrap transition-all",
         variants[variant],
         isLoading && "cursor-not-allowed opacity-50",
         className,
@@ -30,6 +29,10 @@ export default function Button({
       disabled={isLoading || disabled}
       {...props}
     >
+      {isLoading && (
+        <span className="size-3 animate-spin rounded-full border-2 border-current border-t-transparent" />
+      )}
+
       {children}
     </button>
   );

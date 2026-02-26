@@ -8,11 +8,12 @@ import Input from "@/components/ui/Input";
 import Label from "@/components/ui/Label";
 import TextArea from "@/components/ui/TextArea";
 import FormMessage from "@/components/ui/FormMessage";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
-  email: z.string().email({ message: "Enter a valid email" }),
-  company: z.string().min(1, { message: "Enter a valid company" }),
+  email: z.email({ message: "Enter a valid email" }),
+  company: z.string().min(1, { message: "Enter a valid company" }).optional(),
   message: z
     .string()
     .min(10, { message: "Message must be more than 10 characters" }),
@@ -21,6 +22,8 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 export default function ContactForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -36,9 +39,32 @@ export default function ContactForm() {
     },
   });
 
-  function onSubmit(values: FormValues) {
-    console.log(values);
-    reset();
+  async function onSubmit(values: FormValues) {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_MAIL_ACCESS_TOKEN,
+          ...values,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        console.log("Message sent!");
+        reset();
+      }
+    } catch (error) {
+      console.error("Submission error", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -91,7 +117,7 @@ export default function ContactForm() {
         {errors.message && <FormMessage>{errors.message.message}</FormMessage>}
       </div>
 
-      <Button type="submit" className="mt-auto">
+      <Button isLoading={isSubmitting} type="submit" className="mt-auto">
         Send Message
       </Button>
     </form>
