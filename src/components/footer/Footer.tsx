@@ -4,7 +4,7 @@ import Logo from "../shared/Logo";
 
 export default function Footer() {
   return (
-    <footer className="px-md text-foreground fill-foreground sm:pt-lg pt-2xl gap-md pb-sm bg-background relative flex w-full flex-col justify-between sm:min-h-241">
+    <footer className="sm:px-md px-sm text-foreground fill-foreground sm:pt-lg pt-md gap-xl sm:gap-md pb-sm bg-background relative flex w-full flex-col justify-between sm:min-h-241">
       <div className="gap-y-lg flex w-full flex-col justify-between sm:flex-row">
         <div className="flex flex-col">
           <p className="text-foreground-secondary">Get in touch with me</p>

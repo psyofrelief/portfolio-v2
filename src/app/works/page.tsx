@@ -7,7 +7,7 @@ export default async function Works() {
   const projects = PROJECT_ITEMS;
 
   return (
-    <Section className="gap-y-sm flex flex-col">
+    <Section topSection className="gap-y-sm flex flex-col">
       <Heading label="All Works" />
       <ul className="gap-x-xs gap-y-xl grid grid-cols-1 sm:grid-cols-3">
         {projects.map((p) => (

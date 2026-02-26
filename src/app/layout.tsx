@@ -3,6 +3,8 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import { MenuProvider } from "@/contexts/menuContext";
+import MenuOverlay from "@/components/menu/MenuOverlay";
 
 const neueHaasGrotesk = localFont({
   src: [
@@ -38,10 +40,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${neueHaasGrotesk.variable} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={`${neueHaasGrotesk.variable} relative antialiased`}>
+        <MenuProvider>
+          <MenuOverlay />
+          <Navbar />
+          {children}
+          <Footer />
+        </MenuProvider>
       </body>
     </html>
   );

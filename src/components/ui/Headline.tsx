@@ -7,7 +7,9 @@ interface Props {
 
 export default function Headline({ children, className = "" }: Props) {
   return (
-    <h1 className={cn("text-xl leading-tight font-light", className)}>
+    <h1
+      className={cn("text-lg leading-tight font-light sm:text-xl", className)}
+    >
       {children}
     </h1>
   );

@@ -10,26 +10,29 @@ export default function About() {
     <>
       <Section
         data-theme="dark"
-        className="text-foreground flex min-h-screen flex-col justify-between"
+        className="text-foreground sm:gap-y-md gap-y-xl flex min-h-screen flex-col justify-between"
+        topSection
       >
-        <div className="flex justify-between">
+        <div className="gap-y-lg flex flex-col sm:flex-row sm:justify-between">
           <header className="gap-y-sm flex flex-col">
             <Heading label="About Me" />
-            <Headline className="max-w-220">
+            <Headline className="max-w-244">
               Faried has a keen eye for simple, gorgeous and dynamic user
               interfaces. He specialises in using modern frameworks to create
               online apps that are accessible and performant. He brings a
               meticulous approach to both programming and user experience,
-              having worked in branding and visual design.
+              having worked in branding and design.
             </Headline>
           </header>
 
           <Image
             src="/images/about.webp"
             width={1280}
+            loading="eager"
+            priority
             height={1920}
             alt="image of self"
-            className="max-w-70"
+            className="sm:max-w-70"
           />
         </div>
         <div className="gap-md grid grid-cols-2 lg:grid-cols-4">

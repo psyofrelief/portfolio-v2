@@ -18,18 +18,18 @@ export default function NextProjectSection({
   if (!nextProject) return null;
 
   return (
-    <div className="px-md flex">
+    <div className="sm:px-md flex px-0">
       <Section
         data-theme="dark"
-        className="text-foreground bg-background sm:py-md gap-2xl flex justify-between rounded-md"
+        className="text-foreground bg-background sm:py-md gap-sm flex flex-col justify-between sm:flex-row sm:rounded-md"
       >
-        <div className="gap-sm flex flex-col justify-between">
+        <div className="gap-sm flex flex-col sm:justify-between">
           <Heading label="Next Project" />
 
           <Link
             href={"/works"}
             aria-label="View all projects"
-            className="text-3xl text-xl font-light underline underline-offset-8"
+            className="hidden text-3xl text-xl font-light underline underline-offset-8 sm:block"
           >
             View all projects →
           </Link>
@@ -44,6 +44,14 @@ export default function NextProjectSection({
             {...nextProject}
           />
         </div>
+
+        <Link
+          href={"/works"}
+          aria-label="View all projects"
+          className="mt-lg text-lg font-light underline underline-offset-8 sm:hidden sm:text-xl"
+        >
+          View all projects →
+        </Link>
       </Section>
     </div>
   );

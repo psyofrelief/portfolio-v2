@@ -47,19 +47,21 @@ const BouncingImage = ({ images }: Props) => {
   useEffect(() => {
     if (!containerRef.current || !imgRef.current) return;
 
+    const isMobile = window.innerWidth < 768;
+    const speed = isMobile ? 1 : 2;
+
+    state.current.velX = speed;
+    state.current.velY = speed;
+
     const initFrame = requestAnimationFrame(() => {
       if (!containerRef.current || !imgRef.current) return;
 
       const { clientWidth, clientHeight } = containerRef.current;
-
-      // Measure actual image
       const w = imgRef.current.offsetWidth || 270;
       const h = imgRef.current.offsetHeight || 480;
 
-      // Update reactive state
       setDims({ width: w, height: h });
 
-      // Calculate center
       const centerX = clientWidth / 2 - w / 2;
       const centerY = clientHeight / 2 - h / 2;
 
@@ -86,8 +88,6 @@ const BouncingImage = ({ images }: Props) => {
       }
 
       const { clientWidth: cw, clientHeight: ch } = containerRef.current;
-
-      // Keep state.current synced with DOM for physics
       s.width = imgRef.current.offsetWidth;
       s.height = imgRef.current.offsetHeight;
 
@@ -143,27 +143,29 @@ const BouncingImage = ({ images }: Props) => {
   return (
     <div
       ref={containerRef}
-      className="relative h-full w-full overflow-hidden bg-transparent select-none"
+      className="relative z-1 h-full w-full overflow-hidden bg-transparent select-none"
     >
+      {/* 1. PRELOADER */}
       <div style={{ display: "none" }} aria-hidden="true">
         {images.map((src, i) => (
           <Image
+            key={`preload-${i}`}
             height={480}
             width={270}
-            key={`preload-${i}`}
-            loading="eager"
-            priority
             src={src}
             alt=""
+            priority
+            loading="eager"
           />
         ))}
       </div>
 
+      {/* 2. TRAILS */}
       {trails.map((trail, i) => (
         <Image
+          key={`trail-${i}`}
           height={480}
           width={270}
-          key={`trail-${i}`}
           src={trail.src}
           className="pointer-events-none absolute"
           style={{
@@ -177,14 +179,9 @@ const BouncingImage = ({ images }: Props) => {
         />
       ))}
 
-      <Image
-        height={480}
-        loading="eager"
-        width={270}
-        ref={imgRef}
-        src={images[currentIndex]}
-        onMouseDown={handlePress}
-        className={`absolute z-10 h-auto max-w-[40vw] cursor-pointer transition-opacity duration-1000 ${
+      {/* 3. ACTIVE IMAGE + MOBILE TEXT WRAPPER */}
+      <div
+        className={`absolute z-5 transition-opacity duration-1000 ${
           isInitialized ? "opacity-100" : "opacity-0"
         }`}
         style={{
@@ -192,8 +189,24 @@ const BouncingImage = ({ images }: Props) => {
           top: pos.y,
           width: 270,
         }}
-        alt="active"
-      />
+      >
+        <Image
+          height={480}
+          width={270}
+          ref={imgRef}
+          src={images[currentIndex]}
+          onMouseDown={handlePress}
+          className="h-auto w-full max-w-[40vw] cursor-pointer"
+          alt="active"
+          priority
+          loading="eager"
+        />
+
+        {/* Mobile-only "Click me" text */}
+        <span className="text-foreground-secondary absolute top-full left-0 mt-[4px] text-[10px] whitespace-nowrap uppercase md:hidden">
+          Tap me
+        </span>
+      </div>
     </div>
   );
 };

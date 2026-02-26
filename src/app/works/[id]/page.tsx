@@ -23,18 +23,41 @@ export default async function SingleWorkPage({ params }: { params: Params }) {
             priority
             alt="cover image"
           />
-          <div className="flex justify-between">
-            <p>{project.name}</p>
+          <div className="gap-y-sm flex flex-col justify-between sm:flex-row">
+            <p className="font-bold sm:font-normal">{project.name}</p>
             <p className="max-w-100">{project.longDesc}</p>
-            <div className="gap-x-lg flex">
+            <div className="gap-x-md flex sm:hidden">
+              {project.links.source && (
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  className="text-foreground-secondary"
+                  href={project.links.source}
+                >
+                  View Source
+                </a>
+              )}
+
+              {project.links.website && (
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  className="text-foreground-secondary"
+                  href={project.links.website}
+                >
+                  View Website
+                </a>
+              )}
+            </div>
+            <div className="gap-x-lg border-t-outline mt-lg pt-xs flex justify-between border-t sm:mt-0 sm:justify-start sm:border-none sm:pt-0">
               <p>Tech Stack</p>
-              <ul>
+              <ul className="text-end">
                 {project.content.techStack.map((e, idx) => (
                   <li key={idx}>{e}</li>
                 ))}
               </ul>
             </div>
-            <div className="gap-x-md flex">
+            <div className="gap-x-md hidden sm:flex">
               {project.links.source && (
                 <a
                   rel="noreferrer"
@@ -75,7 +98,7 @@ export default async function SingleWorkPage({ params }: { params: Params }) {
           alt="cover image"
         />
 
-        <p className="text-md ml-auto max-w-220 font-light">
+        <p className="sm:text-md ml-auto max-w-220 sm:font-light">
           {project.content.paragraph}
         </p>
         <div className="gap-y-xs flex flex-col">
