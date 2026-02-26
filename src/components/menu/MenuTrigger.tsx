@@ -1,3 +1,4 @@
+"use client";
 import { useMenuContext } from "@/contexts/menuContext";
 
 export default function MenuTrigger() {

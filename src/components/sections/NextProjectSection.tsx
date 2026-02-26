@@ -29,7 +29,7 @@ export default function NextProjectSection({
           <Link
             href={"/works"}
             aria-label="View all projects"
-            className="hidden text-3xl text-xl font-light underline underline-offset-8 sm:block"
+            className="hidden text-xl font-light underline underline-offset-8 sm:block"
           >
             View all projects →
           </Link>

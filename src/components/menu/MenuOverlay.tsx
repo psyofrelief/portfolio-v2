@@ -7,7 +7,7 @@ import Button from "../ui/Button";
 import { NAV_LINKS } from "@/lib/constants/navigation";
 
 export default function MenuOverlay() {
-  const { menuOpen } = useMenuContext();
+  const { menuOpen, toggleMenu } = useMenuContext();
 
   return (
     menuOpen && (
@@ -27,7 +27,7 @@ export default function MenuOverlay() {
             <p>Perth, WA, Australia</p>
           </div>
           <div className="gap-y-xs flex flex-col">
-            <Heading label="Location" />
+            <Heading label="Info" />
             <div className="flex flex-col">
               <a href="mailto:info@faried.net" rel="noreferrer" target="_blank">
                 info@faried.net
@@ -53,7 +53,7 @@ export default function MenuOverlay() {
               are. Work with the best.
             </p>
           </div>
-          <Link href={"/about"} className="flex max-w-fit">
+          <Link href={"/about"} onClick={toggleMenu} className="flex max-w-fit">
             <Button className="bg-background text-foreground flex-1">
               Contact me
             </Button>

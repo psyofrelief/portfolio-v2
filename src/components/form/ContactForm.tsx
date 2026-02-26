@@ -37,7 +37,7 @@ export default function ContactForm() {
   });
 
   function onSubmit(values: FormValues) {
-    console.log(1);
+    console.log(values);
     reset();
   }
 

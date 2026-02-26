@@ -15,7 +15,11 @@ export default function MenuNavLink({ label, href }: Props) {
   return (
     <li
       onClick={closeMenu}
-      className={cn("text-2xl", pathname === href && "italic")}
+      className={cn(
+        "text-2xl",
+        ((pathname.includes(href) && href.length > 1) || pathname === href) &&
+          "italic",
+      )}
     >
       <Link href={href} className="flex flex-1 justify-between">
         <p className="gap-x-xs flex flex-1 leading-none font-light">

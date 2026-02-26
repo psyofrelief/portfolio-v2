@@ -1,5 +1,4 @@
 "use client";
-import { usePathname } from "next/navigation";
 import {
   createContext,
   useContext,
@@ -18,8 +17,6 @@ const MenuContext = createContext<AppContextType | undefined>(undefined);
 
 export const MenuProvider = ({ children }: { children: ReactNode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const pathname = usePathname();
 
   useEffect(() => {
     if (menuOpen) {
