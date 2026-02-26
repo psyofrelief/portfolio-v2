@@ -2,6 +2,7 @@ import { ABOUT_VALUES_DATA } from "@/lib/constants/about";
 import Section from "../shared/Section";
 import Heading from "../ui/Heading";
 import Headline from "../ui/Headline";
+import DotBackground from "../DotBackground";
 
 export default function ValuesSection() {
   const data = ABOUT_VALUES_DATA;
@@ -16,6 +17,7 @@ export default function ValuesSection() {
           Built on optimism. Driven by collaboration. Defined by craft.
         </Headline>
       </header>
+      <DotBackground />
 
       <div className="gap-y-md flex flex-col text-xs">
         {data.map((e, idx) => (

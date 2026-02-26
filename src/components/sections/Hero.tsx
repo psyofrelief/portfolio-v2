@@ -3,7 +3,7 @@ import Section from "../shared/Section";
 
 export default function Hero() {
   return (
-    <Section first className="pb-sm! flex min-h-screen items-end pt-19.5!">
+    <Section className="pb-sm! flex min-h-screen items-end pt-19.5!">
       <Logo />
     </Section>
   );

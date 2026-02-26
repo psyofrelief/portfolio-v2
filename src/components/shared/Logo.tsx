@@ -8,7 +8,7 @@ export default function Logo({ className = "" }: Props) {
     <svg
       viewBox="0 0 1752 375"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("h-auto w-full", className)}
+      className={cn("h-auto w-full fill-inherit", className)}
     >
       <path d="M263.888 50.1388H58.5832V158.333H243.305V205.833H58.5832V374.721H0V0H263.888V50.1388Z" />
       <path d="M529.467 374.721L496.217 278.138H339.995L306.745 374.721H247.634L383.801 0H453.995L590.161 374.721H529.467ZM355.829 231.166H480.384L418.106 49.0832L355.829 231.166Z" />

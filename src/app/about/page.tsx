@@ -3,6 +3,7 @@ import Section from "@/components/shared/Section";
 import Heading from "@/components/ui/Heading";
 import Headline from "@/components/ui/Headline";
 import { ABOUT_PROFILE_DATA } from "@/lib/constants/about";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -22,7 +23,14 @@ export default function About() {
               having worked in branding and visual design.
             </Headline>
           </header>
-          <div className="aspect-3/4 h-auto w-50 bg-white/20" />
+
+          <Image
+            src="/images/about.webp"
+            width={1280}
+            height={1920}
+            alt="image of self"
+            className="max-w-70"
+          />
         </div>
         <div className="gap-md grid grid-cols-2 lg:grid-cols-4">
           {ABOUT_PROFILE_DATA.map((group) => (

@@ -1,6 +1,7 @@
 import NextProjectSection from "@/components/sections/NextProjectSection";
 import Section from "@/components/shared/Section";
 import { PROJECT_ITEMS } from "@/lib/constants/projects";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 type Params = Promise<{ id: string }>;
@@ -12,9 +13,16 @@ export default async function SingleWorkPage({ params }: { params: Params }) {
 
   return (
     <>
-      <Section className="gap-y-2xl flex flex-col pt-12!">
+      <Section className="gap-y-2xl sm:pb-md flex flex-col pt-12!">
         <div className="gap-y-sm flex flex-col">
-          <div className="bg-outline aspect-8/3 w-full" />
+          <Image
+            src={`${project.image.galleryBase}/1.webp`}
+            width={2560}
+            height={1280}
+            loading="eager"
+            priority
+            alt="cover image"
+          />
           <div className="flex justify-between">
             <p>{project.name}</p>
             <p className="max-w-100">{project.longDesc}</p>
@@ -52,28 +60,37 @@ export default async function SingleWorkPage({ params }: { params: Params }) {
           </div>
         </div>
         {/* beneath info */}
-        <div className="gap-x-xs flex h-[700px] w-full">
-          {/* Wide Placeholder (left) */}
-          <div className="h-full flex-[2] bg-black/10" />
 
-          {/* Tall Placeholder (right) */}
-          <div className="h-full flex-1 bg-black/10" />
-        </div>
+        <Image
+          src={`${project.image.galleryBase}/5.webp`}
+          width={2560}
+          height={1920}
+          alt="cover image"
+        />
 
-        <p className="ml-auto max-w-120">{project.content.paragraph}</p>
+        <Image
+          src={`${project.image.galleryBase}/2.webp`}
+          width={2560}
+          height={1280}
+          alt="cover image"
+        />
 
+        <p className="text-md ml-auto max-w-220 font-light">
+          {project.content.paragraph}
+        </p>
         <div className="gap-y-xs flex flex-col">
-          <div className="gap-x-xs flex h-[700px] w-full">
-            {/* Tall Placeholder (left) */}
-            <div className="h-full flex-1 bg-black/10" />
-
-            {/* Wide Placeholder (right) */}
-            <div className="h-full flex-[2] bg-black/10" />
-          </div>
-          <div className="gap-x-xs flex h-[800px] w-full">
-            {/* Wide Placeholder (right) */}
-            <div className="h-full flex-[2] bg-black/10" />
-          </div>
+          <Image
+            src={`${project.image.galleryBase}/3.webp`}
+            width={2560}
+            height={1280}
+            alt="cover image"
+          />
+          <Image
+            src={`${project.image.galleryBase}/4.webp`}
+            width={2560}
+            height={1709}
+            alt="cover image"
+          />
         </div>
       </Section>
 

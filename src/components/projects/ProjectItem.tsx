@@ -6,16 +6,32 @@ interface Props {
   name: string;
   shortDesc: string;
   cover: string;
+  outline?: boolean;
+  eagerLoad?: boolean;
 }
 
-export default function ProjectItem({ name, shortDesc, id, cover }: Props) {
+export default function ProjectItem({
+  name,
+  shortDesc,
+  id,
+  cover,
+  outline = false,
+  eagerLoad = true,
+}: Props) {
   const href = `/works/${id}`;
 
   return (
     <li className="gap-y-xs flex flex-col">
       <Link href={href}>
-        {/*<Image src={cover} width={1000} height={720} alt={name} /> */}
-        <div className="bg-foreground/20 aspect-4/5 size-full" />
+        <Image
+          src={cover}
+          width={1280}
+          height={1920}
+          loading={eagerLoad ? "eager" : "lazy"}
+          priority={eagerLoad}
+          alt={name}
+          className={`rounded ${outline && "border-outline border"}`}
+        />
       </Link>
 
       <div className="grid grid-cols-2 leading-none">

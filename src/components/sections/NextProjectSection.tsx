@@ -1,10 +1,9 @@
 "use client";
 import { PROJECT_ITEMS } from "@/lib/constants/projects";
-import Heading from "@/components/ui/Heading";
 import Link from "next/link";
 import Section from "../shared/Section";
 import ProjectItem from "../projects/ProjectItem";
-import Button from "../ui/Button";
+import Heading from "../ui/Heading";
 
 export default function NextProjectSection({
   currentId,
@@ -19,24 +18,33 @@ export default function NextProjectSection({
   if (!nextProject) return null;
 
   return (
-    <Section
-      data-theme="dark"
-      className="text-foreground bg-background flex justify-between"
-    >
-      <div className="flex flex-col justify-between">
-        <p className="text-xl font-light">Next project</p>
-        <Link aria-label="View All Projects" href="/works">
-          <Button variant="outline" className="flex-1">
-            View All Projects
-          </Button>
-        </Link>
-      </div>
-
-      <ProjectItem
+    <div className="px-md flex">
+      <Section
         data-theme="dark"
-        cover={nextProject.image.cover}
-        {...nextProject}
-      />
-    </Section>
+        className="text-foreground bg-background sm:py-md gap-2xl flex justify-between rounded-md"
+      >
+        <div className="gap-sm flex flex-col justify-between">
+          <Heading label="Next Project" />
+
+          <Link
+            href={"/works"}
+            aria-label="View all projects"
+            className="text-3xl text-xl font-light underline underline-offset-8"
+          >
+            View all projects →
+          </Link>
+        </div>
+
+        <div className="flex max-w-100">
+          <ProjectItem
+            data-theme="dark"
+            outline
+            eagerLoad={false}
+            cover={nextProject.image.cover}
+            {...nextProject}
+          />
+        </div>
+      </Section>
+    </div>
   );
 }

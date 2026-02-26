@@ -40,8 +40,8 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
       techStack: ["Next.js", "TypeScript", "Node.js", "TailwindCSS"],
     },
     image: {
-      cover: "/images/projects/exifpanel/cover.webp",
-      galleryBase: "/images/projects/exifpanel/gallery",
+      cover: "/images/works/exifpanel/cover.webp",
+      galleryBase: "/images/works/exifpanel/gallery",
     },
     config: {
       featured: true,
@@ -64,8 +64,8 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
       techStack: ["Next.js", "Laravel", "MySQL", "GSAP"],
     },
     image: {
-      cover: "/images/projects/prekoda/cover.webp",
-      galleryBase: "/images/projects/prekoda/gallery",
+      cover: "/images/works/prekoda/cover.webp",
+      galleryBase: "/images/works/prekoda/gallery",
     },
     config: {
       className: "max-w-[600px] justify-self-end",
@@ -73,24 +73,24 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
     },
   },
   {
-    id: "capblitz",
+    id: "puretype",
     idx: 3,
-    name: "CapBlitz",
+    name: "PureType",
     shortDesc: "Typing Test",
     longDesc:
       "A precision typing application engineered for low-latency visual feedback. It uses a custom TypeScript state management system to track WPM and keystroke dynamics within an intentionally minimalist, distraction-free environment.",
     links: {
-      source: "https://github.com/psyofrelief/capblitz",
-      website: "https://capblitz.com",
+      source: "https://github.com/psyofrelief/puretype",
+      website: "https://puretype.vercel.app",
     },
     content: {
       paragraph:
-        "CapBlitz is a responsive typing test built entirely with Next.js, Tailwind CSS, and TypeScript. Designed for public users, it delivers a clean and distraction-free interface that adapts seamlessly across devices.",
+        "PureType is a responsive typing test built entirely with Next.js, Tailwind CSS, and TypeScript. Designed for public users, it delivers a clean and distraction-free interface that adapts seamlessly across devices.",
       techStack: ["Next.js", "TypeScript", "TailwindCSS"],
     },
     image: {
-      cover: "/images/projects/capblitz/cover.webp",
-      galleryBase: "/images/projects/capblitz/gallery",
+      cover: "/images/works/puretype/cover.webp",
+      galleryBase: "/images/works/puretype/gallery",
     },
     config: {
       className: "max-w-[600px]",
@@ -98,24 +98,24 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
     },
   },
   {
-    id: "pathsnap",
+    id: "scantek",
     idx: 4,
-    name: "PathSnap",
+    name: "Scantek",
     shortDesc: "Modern Link Shortener",
     longDesc:
       "An API-first URL management platform designed for maximum routing speed. It features a streamlined dashboard for managing dynamic QR codes and short links, backed by a robust Laravel and MySQL architecture.",
     links: {
-      source: "https://github.com/psyofrelief/pathsnap",
+      source: "https://github.com/psyofrelief/scantek",
       website: "p-s.co",
     },
     content: {
       paragraph:
-        "PathSnap is a custom-built link shortener designed for fast performance and ease of use. It allows users to create, manage, and share clean short URLs and QR codes through a modern interface.",
+        "Scantek is a custom-built link shortener designed for fast performance and ease of use. It allows users to create, manage, and share clean short URLs and QR codes through a modern interface.",
       techStack: ["Next.js", "Laravel", "TypeScript", "MySQL"],
     },
     image: {
-      cover: "/images/projects/pathsnap/cover.webp",
-      galleryBase: "/images/projects/pathsnap/gallery",
+      cover: "/images/works/scantek/cover.webp",
+      galleryBase: "/images/works/scantek/gallery",
     },
     config: {
       className: "justify-self-end max-w-[600px]",
@@ -139,8 +139,8 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
       techStack: ["Next.js", "Laravel", "TypeScript", "MySQL", "Shopify API"],
     },
     image: {
-      cover: "/images/projects/aywa/cover.webp",
-      galleryBase: "/images/projects/aywa/gallery",
+      cover: "/images/works/aywa/cover.webp",
+      galleryBase: "/images/works/aywa/gallery",
     },
     config: {
       featured: false,

@@ -6,7 +6,7 @@ import Heading from "../ui/Heading";
 export default function FeaturedProjects() {
   const featured = PROJECT_ITEMS.filter((p) => p.config.featured).slice(0, 3);
   return (
-    <Section first className="gap-y-sm flex flex-col">
+    <Section className="gap-y-sm flex flex-col">
       <Heading label="Featured Works" />
       <ul className="gap-x-xs grid grid-cols-1 sm:grid-cols-3">
         <ProjectItem cover={featured[0].image.cover} {...featured[0]} />
