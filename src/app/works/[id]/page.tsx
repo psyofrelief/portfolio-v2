@@ -84,20 +84,21 @@ export default async function SingleWorkPage({ params }: { params: Params }) {
         </div>
         {/* beneath info */}
 
-        <Image
-          src={`${project.image.galleryBase}/5.webp`}
-          width={2560}
-          height={1920}
-          alt="cover image"
-        />
+        <div className="gap-y-xs flex flex-col">
+          <Image
+            src={`${project.image.galleryBase}/5.webp`}
+            width={2560}
+            height={1920}
+            alt="cover image"
+          />
 
-        <Image
-          src={`${project.image.galleryBase}/2.webp`}
-          width={2560}
-          height={1280}
-          alt="cover image"
-        />
-
+          <Image
+            src={`${project.image.galleryBase}/2.webp`}
+            width={2560}
+            height={1280}
+            alt="cover image"
+          />
+        </div>
         <p className="sm:text-md ml-auto max-w-220 sm:font-light">
           {project.content.paragraph}
         </p>

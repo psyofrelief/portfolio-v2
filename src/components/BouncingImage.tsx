@@ -181,6 +181,7 @@ const BouncingImage = ({ images }: Props) => {
 
       {/* 3. ACTIVE IMAGE + MOBILE TEXT WRAPPER */}
       <div
+        data-cursor-text="Click me"
         className={`absolute z-5 transition-opacity duration-1000 ${
           isInitialized ? "opacity-100" : "opacity-0"
         }`}
@@ -202,7 +203,6 @@ const BouncingImage = ({ images }: Props) => {
           loading="eager"
         />
 
-        {/* Mobile-only "Click me" text */}
         <span className="text-foreground-secondary absolute top-full left-0 mt-[4px] text-[10px] whitespace-nowrap uppercase md:hidden">
           Tap me
         </span>

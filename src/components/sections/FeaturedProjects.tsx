@@ -4,7 +4,7 @@ import ProjectItem from "../projects/ProjectItem";
 import Heading from "../ui/Heading";
 
 export default function FeaturedProjects() {
-  const featured = PROJECT_ITEMS.filter((p) => p.config.featured).slice(0, 3);
+  const featured = PROJECT_ITEMS.filter((p) => p.featured).slice(0, 3);
   return (
     <Section className="gap-y-sm flex flex-col">
       <Heading label="Featured Works" />

@@ -16,10 +16,7 @@ export interface ProjectItemData {
     cover: string;
     galleryBase: string;
   };
-  config: {
-    className?: string;
-    featured?: boolean;
-  };
+  featured?: boolean;
 }
 
 export const PROJECT_ITEMS: ProjectItemData[] = [
@@ -43,9 +40,7 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
       cover: "/images/works/exifpanel/cover.webp",
       galleryBase: "/images/works/exifpanel/gallery",
     },
-    config: {
-      featured: true,
-    },
+    featured: true,
   },
   {
     id: "prekoda",
@@ -67,10 +62,7 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
       cover: "/images/works/prekoda/cover.webp",
       galleryBase: "/images/works/prekoda/gallery",
     },
-    config: {
-      className: "max-w-[600px] justify-self-end",
-      featured: true,
-    },
+    featured: true,
   },
   {
     id: "puretype",
@@ -85,42 +77,36 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
     },
     content: {
       paragraph:
-        "PureType is a responsive typing test built entirely with Next.js, Tailwind CSS, and TypeScript. Designed for public users, it delivers a clean and distraction-free interface that adapts seamlessly across devices.",
+        "PureType, a high-performance typing application built with Next.js, Tailwind CSS, and TypeScript, was developed to provide users with a minimalist and distraction-free environment for speed training. I architected a robust global state management system using React Context to synchronize real-time performance metrics, persistent user settings, and dynamic paragraph generation without compromising UI fluidness.",
       techStack: ["Next.js", "TypeScript", "TailwindCSS"],
     },
     image: {
       cover: "/images/works/puretype/cover.webp",
       galleryBase: "/images/works/puretype/gallery",
     },
-    config: {
-      className: "max-w-[600px]",
-      featured: true,
-    },
+    featured: true,
   },
   {
     id: "scantek",
     idx: 4,
     name: "Scantek",
-    shortDesc: "Modern Link Shortener",
+    shortDesc: "Digital Identity Verification",
     longDesc:
-      "An API-first URL management platform designed for maximum routing speed. It features a streamlined dashboard for managing dynamic QR codes and short links, backed by a robust Laravel and MySQL architecture.",
+      "A refined WordPress and Elementor site for an identity tech leader, optimized for WCAG compliance, brand consistency, and secure HubSpot integration.",
     links: {
-      source: "https://github.com/psyofrelief/scantek",
-      website: "p-s.co",
+      source: null,
+      website: "https://www.scantek.com",
     },
     content: {
       paragraph:
-        "Scantek is a custom-built link shortener designed for fast performance and ease of use. It allows users to create, manage, and share clean short URLs and QR codes through a modern interface.",
-      techStack: ["Next.js", "Laravel", "TypeScript", "MySQL"],
+        "I took over an incomplete and visually erratic WordPress site for Scantek, Australia's leader in identity management, to resolve critical accessibility and technical debt. I refined the UI for WCAG compliance and visual consistency while stabilizing the core build by fixing broken HubSpot integrations, responsive menus, and security vulnerabilities. The result was a performant and professional platform that fully aligned with their established brand identity.",
+      techStack: ["WordPress", "Elementor", "CSS", "Figma"],
     },
     image: {
       cover: "/images/works/scantek/cover.webp",
       galleryBase: "/images/works/scantek/gallery",
     },
-    config: {
-      className: "justify-self-end max-w-[600px]",
-      featured: false,
-    },
+    featured: false,
   },
   {
     id: "aywa",
@@ -131,19 +117,17 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
       "A headless e-commerce platform where culture meets modern web technology. By decoupling the frontend via Shopify’s Storefront API, the site achieves superior load speeds and supports bespoke user authentication logic.",
     links: {
       source: null,
-      website: "https://www.aywa2dawrld.com",
+      website: "https://www.aywa2dawrld.net",
     },
     content: {
       paragraph:
-        "AYWA is a culture-driven streetwear brand that needed a scalable ecommerce platform with a clear visual identity. The goal was to build a fast, reliable shopping experience that reflects the brand’s ambition.",
-      techStack: ["Next.js", "Laravel", "TypeScript", "MySQL", "Shopify API"],
+        "I developed a comprehensive visual identity for AYWA, a culture driven streetwear brand, focusing on establishing a scalable and impactful brand presence. My work centered on creating a bespoke logo and a cohesive branding system designed to reflect the brand's creative ambition and urban influence. By prioritizing a clean yet bold aesthetic, I ensured the identity remained versatile across various digital and physical mediums, providing AYWA with a professional foundation for its expansion into the competitive streetwear market.",
+      techStack: ["Figma", "Illustrator", "Photoshop"],
     },
     image: {
       cover: "/images/works/aywa/cover.webp",
       galleryBase: "/images/works/aywa/gallery",
     },
-    config: {
-      featured: false,
-    },
+    featured: false,
   },
 ];
