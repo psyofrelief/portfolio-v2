@@ -69,3 +69,6 @@
     list-style: none;
   }
 }
+.reveal-mask {
+  clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
+}

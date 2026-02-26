@@ -5,6 +5,8 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { MenuProvider } from "@/contexts/menuContext";
 import MenuOverlay from "@/components/menu/MenuOverlay";
+import CustomCursor from "@/components/CustomCursor";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const neueHaasGrotesk = localFont({
   src: [
@@ -85,11 +87,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${neueHaasGrotesk.variable} relative antialiased`}>
         <MenuProvider>
-          <MenuOverlay />
-          <Navbar />
-          {children}
-          <Footer />
+          <SmoothScroll>
+            <MenuOverlay />
+            <Navbar />
+            {children}
+            <Footer />
+          </SmoothScroll>
         </MenuProvider>
+
+        <CustomCursor />
       </body>
     </html>
   );

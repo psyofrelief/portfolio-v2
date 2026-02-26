@@ -21,7 +21,7 @@ export default function ProjectItem({
   const href = `/works/${id}`;
 
   return (
-    <li className="gap-y-xs flex flex-col">
+    <li data-cursor-text="View" className="gap-y-xs flex flex-col">
       <Link href={href}>
         <Image
           src={cover}

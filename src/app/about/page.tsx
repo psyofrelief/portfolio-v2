@@ -1,3 +1,8 @@
+"use client";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ValuesSection from "@/components/sections/ValuesSection";
 import Section from "@/components/shared/Section";
 import Heading from "@/components/ui/Heading";
@@ -5,7 +10,30 @@ import Headline from "@/components/ui/Headline";
 import { ABOUT_PROFILE_DATA } from "@/lib/constants/about";
 import Image from "next/image";
 
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 export default function About() {
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      gsap.to(".profile-data-box", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 1.2,
+        stagger: 0.1,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: gridRef.current,
+          start: "top 90%",
+          toggleActions: "play none none none",
+        },
+      });
+    },
+    { scope: gridRef },
+  );
+
   return (
     <>
       <Section
@@ -35,9 +63,14 @@ export default function About() {
             className="sm:max-w-70"
           />
         </div>
-        <div className="gap-md grid grid-cols-2 lg:grid-cols-4">
+
+        {/* Animation Target Grid */}
+        <div ref={gridRef} className="gap-md grid grid-cols-2 lg:grid-cols-4">
           {ABOUT_PROFILE_DATA.map((group) => (
-            <div key={group.category} className="gap-y-sm flex flex-col">
+            <div
+              key={group.category}
+              className="profile-data-box reveal-mask gap-y-sm flex flex-col"
+            >
               <h3 className="text-foreground-secondary text-xs uppercase">
                 {group.category}
               </h3>
@@ -51,8 +84,11 @@ export default function About() {
             </div>
           ))}
         </div>
+
+        {/* Spacer to maintain "justify-between" layout if needed */}
         <div className="size-0" />
       </Section>
+
       <ValuesSection />
     </>
   );

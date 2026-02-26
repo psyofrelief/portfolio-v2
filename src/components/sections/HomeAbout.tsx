@@ -12,7 +12,7 @@ export default function HomeAbout() {
     >
       <div className="gap-y-sm flex flex-col">
         <p className="text-md max-w-220 font-light">{data.body[0]}</p>
-        <Link href={"/about"} className="flex">
+        <Link href={"/about"} className="flex w-fit">
           <Button variant="outline">Learn more</Button>
         </Link>
       </div>

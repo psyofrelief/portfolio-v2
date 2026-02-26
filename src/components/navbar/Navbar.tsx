@@ -15,7 +15,8 @@ export default function Navbar() {
       <Link href={"/"} onClick={() => menuOpen && toggleMenu()}>
         <p className="text-xs">FARIED IDRIS</p>
       </Link>
-      <ul className="gap-x-sm hidden sm:flex">
+
+      <ul className="group/nav gap-x-sm hidden sm:flex">
         {NAV_LINKS.map((link) => (
           <NavLink key={link.label} label={link.label} href={link.href} />
         ))}

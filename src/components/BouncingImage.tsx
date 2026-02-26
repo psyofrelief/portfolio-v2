@@ -16,7 +16,7 @@ interface BouncingState {
   width: number;
   height: number;
   imgIndex: number;
-  moving: boolean; // Flag to track 1s delay
+  moving: boolean;
 }
 
 interface Props {
