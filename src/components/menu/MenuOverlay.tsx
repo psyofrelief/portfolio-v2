@@ -53,7 +53,11 @@ export default function MenuOverlay() {
               are. Work with the best.
             </p>
           </div>
-          <Link href={"/about"} onClick={toggleMenu} className="flex max-w-fit">
+          <Link
+            href={"/contact"}
+            onClick={toggleMenu}
+            className="flex max-w-fit"
+          >
             <Button className="bg-background text-foreground flex-1">
               Contact me
             </Button>
