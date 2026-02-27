@@ -9,6 +9,7 @@ import Heading from "@/components/ui/Heading";
 import Headline from "@/components/ui/Headline";
 import { ABOUT_PROFILE_DATA } from "@/lib/constants/about";
 import Image from "next/image";
+import ProfileGrid from "@/components/animations/ProfileGrid";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -65,7 +66,8 @@ export default function About() {
         </div>
 
         {/* Animation Target Grid */}
-        <div ref={gridRef} className="gap-md grid grid-cols-2 lg:grid-cols-4">
+
+        <ProfileGrid>
           {ABOUT_PROFILE_DATA.map((group) => (
             <div
               key={group.category}
@@ -83,8 +85,7 @@ export default function About() {
               </ul>
             </div>
           ))}
-        </div>
-
+        </ProfileGrid>
         {/* Spacer to maintain "justify-between" layout if needed */}
         <div className="size-0" />
       </Section>
