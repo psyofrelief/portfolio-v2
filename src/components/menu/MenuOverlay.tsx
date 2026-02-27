@@ -13,7 +13,7 @@ export default function MenuOverlay() {
     menuOpen && (
       <menu
         data-theme="dark"
-        className="text-foreground p-sm bg-background fixed inset-0 z-3 flex h-screen flex-col justify-between pt-20"
+        className="text-foreground p-sm bg-background fixed inset-0 z-4 flex h-dvh flex-col justify-between pt-20"
       >
         <div className="bg-foreground absolute top-50 -right-70 size-100 rounded-full" />
         <div className="flex flex-col">
