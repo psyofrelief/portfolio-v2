@@ -1,8 +1,3 @@
-"use client";
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ValuesSection from "@/components/sections/ValuesSection";
 import Section from "@/components/shared/Section";
 import Heading from "@/components/ui/Heading";
@@ -11,30 +6,7 @@ import { ABOUT_PROFILE_DATA } from "@/lib/constants/about";
 import Image from "next/image";
 import ProfileGrid from "@/components/animations/ProfileGrid";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export default function About() {
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      gsap.to(".profile-data-box", {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 1.2,
-        stagger: 0.1,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: gridRef.current,
-          start: "top 90%",
-          toggleActions: "play none none none",
-        },
-      });
-    },
-    { scope: gridRef },
-  );
-
   return (
     <>
       <Section
@@ -53,20 +25,18 @@ export default function About() {
               having worked in branding and design.
             </Headline>
           </header>
-
           <Image
             src="/images/about.webp"
-            width={1280}
-            loading="eager"
+            width={800}
+            height={1200}
             priority
-            height={1920}
-            alt="image of self"
-            className="sm:max-w-70"
-          />
+            sizes="(max-width: 640px) 100vw, 280px"
+            alt="Faried Idris"
+            className="h-auto w-full sm:max-w-70"
+          />{" "}
         </div>
 
         {/* Animation Target Grid */}
-
         <ProfileGrid>
           {ABOUT_PROFILE_DATA.map((group) => (
             <div
@@ -86,7 +56,6 @@ export default function About() {
             </div>
           ))}
         </ProfileGrid>
-        {/* Spacer to maintain "justify-between" layout if needed */}
         <div className="size-0" />
       </Section>
 

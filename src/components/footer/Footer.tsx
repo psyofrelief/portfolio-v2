@@ -9,7 +9,10 @@ export default function Footer() {
       <div className="gap-y-lg flex w-full flex-col justify-between sm:flex-row">
         <div className="flex flex-col">
           <p className="text-foreground-secondary">Get in touch with me</p>
-          <a href="mailto:info@faried.net" className="...">
+          <a
+            href="mailto:info@faried.net"
+            className="text-lg font-light sm:text-xl"
+          >
             ↳ info@faried.net
           </a>
         </div>

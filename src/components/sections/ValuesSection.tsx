@@ -30,7 +30,7 @@ export default function ValuesSection() {
             )}
           >
             <p className="">{e.category}</p>
-            <ul className="text-foreground-secondary flex flex-col">
+            <ul className="text-foreground-secondary gap-y-xs flex flex-col">
               {e.items.map((i, itemIdx) => (
                 <li key={itemIdx}>{i}</li>
               ))}
