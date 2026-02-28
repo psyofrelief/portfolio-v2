@@ -1,3 +1,4 @@
+"use client";
 import ValuesSection from "@/components/sections/ValuesSection";
 import Section from "@/components/shared/Section";
 import Heading from "@/components/ui/Heading";
@@ -5,8 +6,11 @@ import Headline from "@/components/ui/Headline";
 import { ABOUT_PROFILE_DATA } from "@/lib/constants/about";
 import Image from "next/image";
 import ProfileGrid from "@/components/animations/ProfileGrid";
+import { useState } from "react";
 
 export default function About() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <>
       <Section
@@ -32,8 +36,9 @@ export default function About() {
             priority
             sizes="(max-width: 640px) 100vw, 280px"
             alt="Faried Idris"
-            className="h-auto w-full sm:max-w-70"
-          />{" "}
+            className={`h-auto w-full transition-opacity duration-1000 sm:max-w-70 ${loaded ? "opacity-100" : "opacity-0"}`}
+            onLoad={() => setLoaded(true)}
+          />
         </div>
 
         {/* Animation Target Grid */}
