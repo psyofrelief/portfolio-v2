@@ -10,60 +10,53 @@ export default function MenuOverlay() {
   const { menuOpen, toggleMenu } = useMenuContext();
 
   return (
-    menuOpen && (
-      <menu
-        data-theme="dark"
-        className="text-foreground p-sm bg-background fixed inset-0 z-4 flex h-dvh flex-col justify-between pt-20"
-      >
-        <div className="bg-foreground absolute top-50 -right-70 size-100 rounded-full" />
-        <div className="flex flex-col">
-          {NAV_LINKS.map((link) => (
-            <MenuNavLink label={link.label} href={link.href} key={link.href} />
-          ))}
+    <menu
+      data-theme="dark"
+      className={`text-foreground p-sm bg-background fixed inset-0 z-4 flex h-dvh flex-col justify-between pt-20 transition-opacity duration-200 ${menuOpen ? "opacity-100" : "opacity-0"}`}
+    >
+      <div className="bg-foreground absolute top-50 -right-70 z-1 size-100 rounded-full" />
+      <div className="flex flex-col">
+        {NAV_LINKS.map((link) => (
+          <MenuNavLink label={link.label} href={link.href} key={link.href} />
+        ))}
+      </div>
+      <div className="gap-y-lg flex flex-col">
+        <div className="gap-y-xs flex flex-col">
+          <Heading label="Location" />
+          <p>Perth, WA, Australia</p>
         </div>
-        <div className="gap-y-lg flex flex-col">
-          <div className="gap-y-xs flex flex-col">
-            <Heading label="Location" />
-            <p>Perth, WA, Australia</p>
-          </div>
-          <div className="gap-y-xs flex flex-col">
-            <Heading label="Info" />
-            <div className="flex flex-col">
-              <a href="mailto:info@faried.net" rel="noreferrer" target="_blank">
-                info@faried.net
-              </a>
-              <a
-                href="https://www.linkedin.com/in/faried-idris"
-                rel="noreferrer"
-                target="_blank"
-              >
-                /in/faried-idris
-              </a>
-            </div>
-          </div>
-        </div>
-        <div
-          data-theme="light"
-          className="bg-foreground p-sm text-background gap-y-md flex flex-col rounded"
-        >
+        <div className="gap-y-xs flex flex-col">
+          <Heading label="Info" />
           <div className="flex flex-col">
-            <p>Believe in the power of design</p>
-            <p className="font-light">
-              Collab with the best, I’m always available for a short chat if you
-              are. Work with the best.
-            </p>
+            <a href="mailto:info@faried.net" rel="noreferrer" target="_blank">
+              info@faried.net
+            </a>
+            <a
+              href="https://www.linkedin.com/in/faried-idris"
+              rel="noreferrer"
+              target="_blank"
+            >
+              /in/faried-idris
+            </a>
           </div>
-          <Link
-            href={"/contact"}
-            onClick={toggleMenu}
-            className="flex max-w-fit"
-          >
-            <Button className="bg-background text-foreground flex-1">
-              Contact me
-            </Button>
-          </Link>
         </div>
-      </menu>
-    )
+      </div>
+      <div
+        data-theme="light"
+        className="bg-foreground p-sm text-background gap-y-sm border-background z-2 flex flex-col rounded border"
+      >
+        <div className="flex flex-col">
+          <p>Bridging the gap between design and code</p>
+          <p className="font-light">
+            Currently open to new projects and collaborations. Reach out!
+          </p>
+        </div>
+        <Link href={"/contact"} onClick={toggleMenu} className="flex max-w-fit">
+          <Button className="bg-background text-foreground flex-1">
+            Contact me
+          </Button>
+        </Link>
+      </div>
+    </menu>
   );
 }
