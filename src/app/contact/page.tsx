@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <div
       data-theme="dark"
-      className="text-foreground bg-background grid min-h-dvh grid-cols-1 pt-12 pb-0! sm:max-h-screen sm:min-h-screen sm:grid-cols-2"
+      className="text-foreground bg-background z-4 grid min-h-dvh grid-cols-1 pt-12 pb-0! sm:max-h-screen sm:min-h-screen sm:grid-cols-2"
     >
       <div className="bg-outline absolute top-12 right-0 left-0 h-px w-full" />
       <div className="sm:px-md px-sm py-xl sm:py-md gap-y-xl flex flex-col sm:items-center sm:justify-center">
@@ -20,7 +20,7 @@ export default function Contact() {
         <WorldClocks />
       </div>
 
-      <div className="border-l-outline sm:px-md px-sm py-md gap-y-2xl flex flex-col sm:border-l">
+      <div className="border-l-outline sm:px-md px-sm py-md gap-y-2xl z-4 flex flex-col sm:border-l">
         <ContactForm />
       </div>
     </div>

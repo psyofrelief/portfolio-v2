@@ -94,8 +94,6 @@ export default function RootLayout({
             <Footer />
           </SmoothScroll>
         </MenuProvider>
-
-        <CustomCursor />
       </body>
     </html>
   );
