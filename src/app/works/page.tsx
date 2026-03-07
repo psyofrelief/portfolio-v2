@@ -9,7 +9,7 @@ export default async function Works() {
   return (
     <Section topSection className="gap-y-sm flex flex-col">
       <Heading label="All Works" />
-      <ul className="gap-x-xs gap-y-xl grid grid-cols-1 sm:grid-cols-3">
+      <ul className="gap-x-xs gap-y-xl z-4 grid grid-cols-1 sm:grid-cols-3">
         {projects.map((p) => (
           <ProjectItem key={p.id} cover={p.image.cover} {...p} />
         ))}
