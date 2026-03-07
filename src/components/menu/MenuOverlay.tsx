@@ -12,7 +12,7 @@ export default function MenuOverlay() {
   return (
     <menu
       data-theme="dark"
-      className={`text-foreground p-sm bg-background fixed inset-0 z-98 flex h-dvh flex-col justify-between pt-20 transition-opacity duration-200 ${menuOpen ? "opacity-100" : "opacity-0"}`}
+      className={`text-foreground p-sm bg-background fixed inset-0 flex h-dvh flex-col justify-between pt-20 transition-opacity duration-200 ${menuOpen ? "z-99 opacity-100" : "opacity-0"}`}
     >
       <div className="bg-foreground absolute top-50 -right-70 z-1 size-100 rounded-full" />
       <div className="flex flex-col">
