@@ -25,7 +25,10 @@ export default function HeroFade({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <div ref={logoContainer} className="z-3 w-full mix-blend-difference">
+    <div
+      ref={logoContainer}
+      className="pointer-events-none z-5 w-full mix-blend-difference select-none"
+    >
       {children}
     </div>
   );
