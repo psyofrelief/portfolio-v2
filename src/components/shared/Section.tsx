@@ -14,7 +14,7 @@ export default function Section({
   return (
     <section
       className={cn(
-        "bg-background px-sm py-lg sm:py-3xl sm:px-md w-full flex-1",
+        "bg-background px-sm py-lg sm:py-3xl sm:px-md z-4 w-full flex-1",
         topSection && "sm:pt-3xl pt-18",
         className,
       )}

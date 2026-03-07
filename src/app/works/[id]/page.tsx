@@ -26,7 +26,7 @@ export default async function SingleWorkPage({ params }: { params: Params }) {
           <div className="gap-y-sm flex flex-col justify-between sm:flex-row">
             <p className="font-bold sm:font-normal">{project.name}</p>
             <p className="max-w-100">{project.longDesc}</p>
-            <div className="gap-x-md flex sm:hidden">
+            <div className="gap-x-md z-4 flex sm:hidden">
               {project.links.source && (
                 <a
                   rel="noreferrer"

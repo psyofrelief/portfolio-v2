@@ -143,7 +143,7 @@ const BouncingImage = ({ images }: Props) => {
   return (
     <div
       ref={containerRef}
-      className="relative z-1 h-full w-full overflow-hidden bg-transparent select-none"
+      className="relative z-4 h-full w-full overflow-hidden bg-transparent select-none"
     >
       {/* 1. PRELOADER */}
       <div style={{ display: "none" }} aria-hidden="true">
@@ -167,7 +167,7 @@ const BouncingImage = ({ images }: Props) => {
           height={480}
           width={270}
           src={trail.src}
-          className="pointer-events-none absolute"
+          className="pointer-events-none absolute z-1"
           style={{
             left: trail.x,
             top: trail.y,
