@@ -9,7 +9,7 @@ export default function Navbar() {
   const { menuOpen, toggleMenu } = useMenuContext();
   return (
     <nav
-      className="sm:px-md px-sm py-sm text-foreground fixed top-0 right-0 left-0 z-4 flex w-full justify-between mix-blend-difference"
+      className="sm:px-md px-sm py-sm text-foreground fixed top-0 right-0 left-0 z-99 flex w-full justify-between mix-blend-difference"
       data-theme="dark"
     >
       <Link href={"/"} onClick={() => menuOpen && toggleMenu()}>
