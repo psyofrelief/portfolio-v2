@@ -6,7 +6,7 @@ import Logo from "../shared/Logo";
 export default function Footer() {
   return (
     <FooterReveal>
-      <div className="gap-y-lg z-4 flex w-full flex-col justify-between sm:flex-row">
+      <div className="gap-y-lg z-98 flex w-full flex-col justify-between sm:flex-row">
         <div className="flex flex-col">
           <p className="text-foreground-secondary">Get in touch with me</p>
           <a
