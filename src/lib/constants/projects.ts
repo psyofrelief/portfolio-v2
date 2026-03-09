@@ -21,52 +21,36 @@ export interface ProjectItemData {
 
 export const PROJECT_ITEMS: ProjectItemData[] = [
   {
-    id: "exifpanel",
+    id: "piasco",
     idx: 1,
-    name: "ExifPanel",
-    shortDesc: "EXIF Metadata Inspection Tool",
+    name: "Piasco",
+    shortDesc: "Secure Link Management",
     longDesc:
-      "A technical utility built to bridge the gap between raw binary image data and actionable insights. It leverages a high-performance parsing engine to extract nested EXIF and GPS data within a refined, developer-centric interface.",
+      "A full-stack utility designed to bridge the gap between complex relational data and secure user workflows. It leverages Next.js 15 and Prisma to manage authenticated dashboards, encrypted credential handling, and real-time link tracking within a type-safe environment.",
     links: {
-      source: "https://github.com/psyofrelief/exif-panel",
-      website: "https://exifpanel.dev",
+      source: "https://github.com/psyofrelief/piasco",
+      website: "https://p-s.co",
     },
     content: {
       paragraph:
-        "ExifPanel was designed to provide developers and content producers with a powerful yet user-friendly tool for rapidly retrieving and presenting image metadata. It focuses on effectively parsing complex EXIF, IPTC, and XMP data encoded within digital photographs, providing important fields like location, exposure settings, and camera model in a clear, understandable format.",
-      techStack: ["Next.js", "TypeScript", "Node.js", "TailwindCSS"],
+        "I built Piasco to provide a secure and high-performance solution for managing shortened URLs and sensitive user data. I architected a robust authentication system using NextAuth.js and custom middleware to handle identity verification and protect dashboard routes. By implementing Prisma for relational modeling and PostgreSQL for persistence, I ensured that every link click is tracked accurately while maintaining strict type safety and low-latency response times across the entire stack.",
+      techStack: [
+        "Next.js 15",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "TailwindCSS",
+      ],
     },
     image: {
-      cover: "/images/works/exifpanel/cover.webp",
-      galleryBase: "/images/works/exifpanel/gallery",
-    },
-    featured: true,
-  },
-  {
-    id: "prekoda",
-    idx: 2,
-    name: "Prekoda",
-    shortDesc: "Creative Web & Branding Agency",
-    longDesc:
-      "A creative studio focused on high-end branding and robust full-stack engineering. The platform utilizes a hybrid stack of Laravel and Next.js to deliver fluid, high-conversion digital experiences with a heavy emphasis on motion design.",
-    links: {
-      source: null,
-      website: "https://prekoda.com",
-    },
-    content: {
-      paragraph:
-        "Prekoda is a creative web and branding studio I founded to help businesses build fast, functional, and memorable digital experiences. The focus spans full-stack web development, digital branding, and scalable product design.",
-      techStack: ["Next.js", "Laravel", "MySQL", "GSAP"],
-    },
-    image: {
-      cover: "/images/works/prekoda/cover.webp",
-      galleryBase: "/images/works/prekoda/gallery",
+      cover: "/images/works/piasco/cover.webp",
+      galleryBase: "/images/works/piasco/gallery",
     },
     featured: true,
   },
   {
     id: "puretype",
-    idx: 3,
+    idx: 2,
     name: "PureType",
     shortDesc: "Typing Test",
     longDesc:
@@ -87,8 +71,53 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
     featured: true,
   },
   {
-    id: "scantek",
+    id: "prekoda",
+    idx: 3,
+    name: "Prekoda",
+    shortDesc: "Creative Web & Branding Agency",
+    longDesc:
+      "A creative studio focused on high-end branding and robust full-stack engineering. The platform utilizes a hybrid stack of Laravel and Next.js to deliver fluid, high-conversion digital experiences with a heavy emphasis on motion design.",
+    links: {
+      source: null,
+      website: "https://prekoda.com",
+    },
+    content: {
+      paragraph:
+        "Prekoda is a creative web and branding studio I founded to help businesses build fast, functional, and memorable digital experiences. The focus spans full-stack web development, digital branding, and scalable product design.",
+      techStack: ["Next.js", "Laravel", "MySQL", "GSAP"],
+    },
+    image: {
+      cover: "/images/works/prekoda/cover.webp",
+      galleryBase: "/images/works/prekoda/gallery",
+    },
+    featured: false,
+  },
+
+  {
+    id: "exifpanel",
     idx: 4,
+    name: "ExifPanel",
+    shortDesc: "EXIF Inspection Tool",
+    longDesc:
+      "A technical utility built to bridge the gap between raw binary image data and actionable insights. It leverages a high-performance parsing engine to extract nested EXIF and GPS data within a refined, developer-centric interface.",
+    links: {
+      source: "https://github.com/psyofrelief/exif-panel",
+      website: "https://exifpanel.dev",
+    },
+    content: {
+      paragraph:
+        "ExifPanel was designed to provide developers and content producers with a powerful yet user-friendly tool for rapidly retrieving and presenting image metadata. It focuses on effectively parsing complex EXIF, IPTC, and XMP data encoded within digital photographs, providing important fields like location, exposure settings, and camera model in a clear, understandable format.",
+      techStack: ["Next.js", "TypeScript", "Node.js", "TailwindCSS"],
+    },
+    image: {
+      cover: "/images/works/exifpanel/cover.webp",
+      galleryBase: "/images/works/exifpanel/gallery",
+    },
+    featured: true,
+  },
+  {
+    id: "scantek",
+    idx: 5,
     name: "Scantek",
     shortDesc: "Digital Identity Verification",
     longDesc:
@@ -110,7 +139,7 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
   },
   {
     id: "aywa",
-    idx: 5,
+    idx: 6,
     name: "AYWA",
     shortDesc: "Culture-Inspired Streetwear",
     longDesc:
