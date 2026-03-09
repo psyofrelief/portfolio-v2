@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import FadeInImage from "../shared/FadeInImage";
 
 interface Props {
   id: string;
@@ -26,12 +26,11 @@ export default function ProjectItem({
       className="gap-y-xs flex cursor-pointer flex-col"
     >
       <Link href={href}>
-        <Image
+        <FadeInImage
           src={cover}
           width={1280}
           height={1920}
           loading={eagerLoad ? "eager" : "lazy"}
-          priority={eagerLoad}
           alt={name}
           className={`rounded ${outline && "border-outline border"}`}
         />

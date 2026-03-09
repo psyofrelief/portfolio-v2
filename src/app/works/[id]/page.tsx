@@ -1,7 +1,7 @@
 import NextProjectSection from "@/components/sections/NextProjectSection";
+import FadeInImage from "@/components/shared/FadeInImage";
 import Section from "@/components/shared/Section";
 import { PROJECT_ITEMS } from "@/lib/constants/projects";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 
 type Params = Promise<{ id: string }>;
@@ -15,12 +15,11 @@ export default async function SingleWorkPage({ params }: { params: Params }) {
     <>
       <Section className="gap-y-2xl sm:pb-md flex flex-col pt-12!">
         <div className="gap-y-sm flex flex-col">
-          <Image
+          <FadeInImage
             src={`${project.image.galleryBase}/1.webp`}
             width={2560}
             height={1280}
             loading="eager"
-            priority
             alt="cover image"
           />
           <div className="gap-y-sm flex flex-col justify-between sm:flex-row">
@@ -85,14 +84,14 @@ export default async function SingleWorkPage({ params }: { params: Params }) {
         {/* beneath info */}
 
         <div className="gap-y-xs flex flex-col">
-          <Image
+          <FadeInImage
             src={`${project.image.galleryBase}/5.webp`}
             width={2560}
             height={1920}
             alt="cover image"
           />
 
-          <Image
+          <FadeInImage
             src={`${project.image.galleryBase}/2.webp`}
             width={2560}
             height={1280}
@@ -103,13 +102,13 @@ export default async function SingleWorkPage({ params }: { params: Params }) {
           {project.content.paragraph}
         </p>
         <div className="gap-y-xs flex flex-col">
-          <Image
+          <FadeInImage
             src={`${project.image.galleryBase}/3.webp`}
             width={2560}
             height={1280}
             alt="cover image"
           />
-          <Image
+          <FadeInImage
             src={`${project.image.galleryBase}/4.webp`}
             width={2560}
             height={1709}
