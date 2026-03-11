@@ -140,6 +140,14 @@ const BouncingImage = ({ images }: Props) => {
     );
   };
 
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const { offsetWidth, offsetHeight } = e.currentTarget;
+    setDims({ width: offsetWidth, height: offsetHeight });
+
+    state.current.width = offsetWidth;
+    state.current.height = offsetHeight;
+  };
+
   return (
     <div
       ref={containerRef}
@@ -159,7 +167,6 @@ const BouncingImage = ({ images }: Props) => {
           />
         ))}
       </div>
-
       {/* 2. TRAILS */}
       {trails.map((trail, i) => (
         <Image
@@ -178,35 +185,38 @@ const BouncingImage = ({ images }: Props) => {
           alt=""
         />
       ))}
-
-      {/* 3. ACTIVE IMAGE + MOBILE TEXT WRAPPER */}
+      {/* ACTIVE IMAGE WRAPPER */}
       <div
-        data-cursor-text="Click me"
-        className={`absolute z-5 transition-opacity duration-1000 ${
+        className={`pointer-events-none absolute z-5 transition-opacity duration-1000 ${
           isInitialized ? "opacity-100" : "opacity-0"
         }`}
         style={{
           left: pos.x,
           top: pos.y,
-          width: 270,
+          width: dims.width,
         }}
       >
-        <Image
-          height={480}
-          width={270}
-          ref={imgRef}
-          src={images[currentIndex]}
-          onMouseDown={handlePress}
-          className="h-auto w-full max-w-[40vw] cursor-pointer"
-          alt="active"
-          priority
-          loading="eager"
-        />
-
-        <span className="text-foreground-secondary absolute top-full left-0 mt-[4px] text-[10px] whitespace-nowrap uppercase md:hidden">
-          Tap me
-        </span>
-      </div>
+        <div className="pointer-events-auto">
+          <Image
+            ref={imgRef}
+            src={images[currentIndex]}
+            width={270}
+            height={480}
+            alt="active"
+            priority
+            onLoad={handleImageLoad}
+            onMouseDown={(e) => {
+              e.stopPropagation();
+              handlePress();
+            }}
+            onTouchStart={(e) => {
+              e.stopPropagation();
+              handlePress();
+            }}
+            className="h-auto w-full max-w-[40vw] cursor-pointer object-cover"
+          />
+        </div>
+      </div>{" "}
     </div>
   );
 };
