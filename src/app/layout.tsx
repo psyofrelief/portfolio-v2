@@ -93,6 +93,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </SmoothScroll>
+          <CustomCursor />
         </MenuProvider>
       </body>
     </html>

@@ -204,6 +204,7 @@ const BouncingImage = ({ images }: Props) => {
             height={480}
             alt="active"
             priority
+            data-cursor-text="CLICK ME"
             onLoad={handleImageLoad}
             onMouseDown={(e) => {
               e.stopPropagation();
