@@ -21,8 +21,30 @@ export interface ProjectItemData {
 
 export const PROJECT_ITEMS: ProjectItemData[] = [
   {
-    id: "piasco",
+    id: "prekoda",
     idx: 1,
+    name: "Prekoda",
+    shortDesc: "Creative Web & Branding Agency",
+    longDesc:
+      "A creative studio focused on high-end branding and robust full-stack engineering. The platform utilizes a hybrid stack of Laravel and Next.js to deliver fluid, high-conversion digital experiences with a heavy emphasis on motion design.",
+    links: {
+      source: null,
+      website: "https://prekoda.com",
+    },
+    content: {
+      paragraph:
+        "Prekoda is a creative web and branding studio I founded to help businesses build fast, functional, and memorable digital experiences. The focus spans full-stack web development, digital branding, and scalable product design.",
+      techStack: ["Next.js", "Laravel", "MySQL", "GSAP"],
+    },
+    image: {
+      cover: "/images/works/prekoda/cover.webp",
+      galleryBase: "/images/works/prekoda/gallery",
+    },
+    featured: true,
+  },
+  {
+    id: "piasco",
+    idx: 2,
     name: "Piasco",
     shortDesc: "Secure Link Management",
     longDesc:
@@ -50,7 +72,7 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
   },
   {
     id: "puretype",
-    idx: 2,
+    idx: 3,
     name: "PureType",
     shortDesc: "Typing Test",
     longDesc:
@@ -69,28 +91,6 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
       galleryBase: "/images/works/puretype/gallery",
     },
     featured: true,
-  },
-  {
-    id: "prekoda",
-    idx: 3,
-    name: "Prekoda",
-    shortDesc: "Creative Web & Branding Agency",
-    longDesc:
-      "A creative studio focused on high-end branding and robust full-stack engineering. The platform utilizes a hybrid stack of Laravel and Next.js to deliver fluid, high-conversion digital experiences with a heavy emphasis on motion design.",
-    links: {
-      source: null,
-      website: "https://prekoda.com",
-    },
-    content: {
-      paragraph:
-        "Prekoda is a creative web and branding studio I founded to help businesses build fast, functional, and memorable digital experiences. The focus spans full-stack web development, digital branding, and scalable product design.",
-      techStack: ["Next.js", "Laravel", "MySQL", "GSAP"],
-    },
-    image: {
-      cover: "/images/works/prekoda/cover.webp",
-      galleryBase: "/images/works/prekoda/gallery",
-    },
-    featured: false,
   },
 
   {
@@ -113,7 +113,7 @@ export const PROJECT_ITEMS: ProjectItemData[] = [
       cover: "/images/works/exifpanel/cover.webp",
       galleryBase: "/images/works/exifpanel/gallery",
     },
-    featured: true,
+    featured: false,
   },
   {
     id: "scantek",
