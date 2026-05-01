@@ -31,18 +31,17 @@
 
 # Overview
 
-This portfolio is a high performance web app built to showcase UI engineering and brand identity projects. It features a minimal aesthetic and a robust contact system designed for direct communication through ProtonMail.
+This portfolio is a high performance web app built to showcase my UI design, engineering and brand identity projects. 
 
-The site highlights professional work for clients like Scantek and AYWA. It focuses on clean code, type safety, and modern styling through Tailwind v4.
+The site highlights professional work for clients like Scantek and AYWA. It focuses on clean code, type safety, and modern styling 
 
 ## Built With
 
 **Frontend**
 
-* Next.js 15 (App Router)
+* Next.js (App Router)
 * TypeScript
-* Tailwind CSS v4
-* React Hook Form
+* Tailwind CSS
 * Zod
 
 **Backend**
